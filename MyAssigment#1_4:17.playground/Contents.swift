@@ -22,7 +22,7 @@
 // R. Array can contain duplicate where Set does not have any duplicate
 // 10. can you assign a optional value to a none optional var if yes how, if no why?
 // R. You can't assign an optional value to a non optional because
-// they are not of the same type
+// they are not of the same type. But you can assign a non optionl to a optional.
 
 
 

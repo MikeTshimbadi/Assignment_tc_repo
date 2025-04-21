@@ -6,7 +6,7 @@
 // 2. what is reference type and value type. Explain with a example
 // R. - A reference type copies the reference of a memory and point to the same memory address
 //    - and value type create a new memmory address
-// 3. why structs faster compare to classess
+// 3. why structs faster compare to classes
 // R. Because structs are stored in a stack memory and classes are stored in a heap memory
 // how to mutate structs
 // R. by adding the "mutating" keywords before the function
@@ -16,7 +16,7 @@
 // R. it represent a collection of related values together
 // 7. what is associated type
 // R. In enum is when we can pass additional value to each case
-// 8. diff b/w associated type and raw type
+// 8. diff b/w associated value and raw value
 // R. - Associated type can pass additional value to the case but
 //    - raw type is difined anc you can't change it
 // 9. what is protocol
@@ -24,7 +24,8 @@
 // 10. what is the use protocol
 // R. it allows mutiple implementation of the same function when needed.
 // 11. what is extension
-// R. It is function that allows protocol field to be optional function
+// R.- It is function that allows protocol field to be optional function
+//   - As it pretends to class and struct, extension allow to add more functionality to the func
 // 12. how to make a func optional in protocol
 // R. By creating a extension
 // 13. diff b/w heap and stack memory
