@@ -60,3 +60,7 @@ class Person1 {
 //R. - enum are value type because it behaves like struct
 //   - Protocol conforms to the type because it is just a bleuprint
 //   - collections are value type because they copy the value and create a new memory in the stack
+
+
+//let human = Human()
+
