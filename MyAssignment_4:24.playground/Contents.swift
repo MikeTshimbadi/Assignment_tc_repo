@@ -2,12 +2,13 @@
  interview questions
   1. what is dependency injection
   R. Dependency is a design pattern where one object provides the dependency of other object
+     to avoid the creating an object of one class in an other taht can create an infinite loop
  
   2. difference types of dependency and advantage of it
   R. Dependency Initializer
         - it is immutable
         - the object is always in a valid state
-    Intance dependency
+    Instance dependency
         - It is flexible
         - support different framworks and library
         - it is good for testing and mocking
@@ -16,10 +17,10 @@
         R. - Use when the dependency is essential and the object can't function without it.
            - it is a mandatory, it is used when it's mandatory. without it you can create a object.
            -
-        b. function paramaeter depency
+        b. function paramater depency
         R. to use when you need it in that particular option or function
   4. what is dependency inversion, explain with examples
-  R. instead of using conrete dependency, use protocol for code reusability and it makes your code lousely coupled
+  R. instead of using concrete dependency, use protocol for code reusability and it makes your code lousely coupled
   5. what are mandatrory data function
   R.- NumberOfRolesInSection and cellForRowAt indexpath
  -----> func tableView(_ tableView: UITableView, 'numberOfRowsInSection' section: Int) -> Int {

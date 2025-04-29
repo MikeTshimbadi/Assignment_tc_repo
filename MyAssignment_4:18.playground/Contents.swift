@@ -18,7 +18,7 @@
 // R. In enum is when we can pass additional value to each case
 // 8. diff b/w associated value and raw value
 // R. - Associated type can pass additional value to the case but
-//    - raw type is difined anc you can't change it
+//    - raw type is difined andyou can't change it
 // 9. what is protocol
 // R. Protocol is a blueprint of methods and variable. It can't be access directly
 // 10. what is the use protocol

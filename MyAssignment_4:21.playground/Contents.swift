@@ -34,7 +34,7 @@ class Person1 {
 }
 
 //3. diiff b/w if let and guard let
-//R. - in if let the variabl scope exist only inside the if block, but with guard let it is available even after the guard block
+//R. - in if let the variable scope exist only inside the if block, but with guard let it is available even after the guard block
 //   - if let unwrap the optianal only if it's non-nil whereas guard let is used to exiy early if the value is nil
 
 //4. what is closure
