@@ -1,13 +1,5 @@
-//
-//  CountryField.swift
-//  CountryDataApp
-//
-//  Created by Mike Tshimbadi on 4/28/25.
-//
-// country model
+
 import Foundation
-
-
 
 struct Country: Decodable {
     let capital: String?

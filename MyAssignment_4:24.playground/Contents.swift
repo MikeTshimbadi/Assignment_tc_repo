@@ -21,7 +21,7 @@
         R. to use when you need it in that particular option or function
   4. what is dependency inversion, explain with examples
   R. instead of using concrete dependency, use protocol for code reusability and it makes your code lousely coupled
-  5. what are mandatrory data function
+  5. what are mandatory data function
   R.- NumberOfRolesInSection and cellForRowAt indexpath
  -----> func tableView(_ tableView: UITableView, 'numberOfRowsInSection' section: Int) -> Int {
      return 10
