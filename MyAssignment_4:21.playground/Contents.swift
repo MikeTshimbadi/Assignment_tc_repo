@@ -2,7 +2,7 @@
 // ------------------------------ interview questions ----------------------
 //1. diff type of initializers
 // R. - Disagnated initializer
-//    - Convience initializer
+//    - Convenience initializer
 
 //2. diff b/w designated initializer and convenience intializer. Explain with an example
 //R. - Designated initializer ensure that store property are initialize
@@ -35,7 +35,7 @@ class Person1 {
 
 //3. diiff b/w if let and guard let
 //R. - in if let the variable scope exist only inside the if block, but with guard let it is available even after the guard block
-//   - if let unwrap the optianal only if it's non-nil whereas guard let is used to exiy early if the value is nil
+//   - if let unwrap the optianol only if it's non-nil whereas guard let is used to exit early if the value is nil
 
 //4. what is closure
 //R. It is a hybrid of variable and function
@@ -48,7 +48,7 @@ class Person1 {
 //   - the non escaping does not require the keyword "escaping" but the escaping closure does
 
 //7. what is auto closure
-//R. It automatically wraps an expression in a closure
+//R. It automatically wraps an expression in a closure so you dont use {}
 
 //8. are closure reference type of value type
 //R. closure are reference type

@@ -3,6 +3,7 @@
 // R. - class are reference type and struct are value type
 //    - class allows inheritence and struct does not
 //    - class obj are stored in heap memory and struct are stored in stack memory
+//    - class are mutable and struct are naturally not
 // 2. what is reference type and value type. Explain with a example
 // R. - A reference type copies the reference of a memory and point to the same memory address
 //    - and value type create a new memmory address
@@ -11,14 +12,14 @@
 // how to mutate structs
 // R. by adding the "mutating" keywords before the function
 // 5. what is the use of mutating keyword
-// R. To allow a function to be mutable
+// R. To allow a function to be mutable in struct
 // 6. what is enum
 // R. it represent a collection of related values together
 // 7. what is associated type
 // R. In enum is when we can pass additional value to each case
 // 8. diff b/w associated value and raw value
 // R. - Associated type can pass additional value to the case but
-//    - raw type is difined andyou can't change it
+//    - raw type is difined and you can't change it
 // 9. what is protocol
 // R. Protocol is a blueprint of methods and variable. It can't be access directly
 // 10. what is the use protocol

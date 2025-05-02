@@ -1,19 +1,18 @@
 //
-//  CountryNameTableViewCell.swift
-//  CountryEmployeeDisplayApp
+//  CountryTableViewCell.swift
+//  CountryApiCallsApp
 //
-//  Created by Mike Tshimbadi on 4/29/25.
+//  Created by Mike Tshimbadi on 5/1/25.
 //
 
 import UIKit
 
-class CountryNameTableViewCell: UITableViewCell {
+class CountryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
     
-    @IBOutlet weak var CountryNameLabel: UILabel!
-    @IBOutlet weak var CapitalLabel: UILabel!
-    @IBOutlet weak var CodeLabel: UILabel!
-    
+    @IBOutlet weak var codeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

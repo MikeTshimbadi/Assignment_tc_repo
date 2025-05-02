@@ -6,7 +6,7 @@
 // 3. diff b/w explict and implicit variables
 // R. an implicit variable is when a value is assigned at
 // declaration w/o a data type -> var city = "LA"
-// whereas explicit is when you declarate the variable and type prior to assigning valuesd
+// whereas explicit is when you declara the variable and type prior to assigning value
 // 4. how to create optional variables
 // R. By adding a ("?") to the end of the data type declaration -> String?
 // 5. what is optional binding
@@ -17,7 +17,7 @@
 // R. colasing is when you assign a default value to a optional. it uses ("??")
 // and if let verifies the velicity certain variables before doing something
 // 8. diff b/w array and dict
-// R. An arry is an ordered collection whereas dict is unorderd collection of key-value pair
+// R. An array is an ordered collection whereas dict is unorderd collection of key-value pair
 // 9. diff b/w array and sets
 // R. Array can contain duplicate where Set does not have any duplicate
 // 10. can you assign a optional value to a none optional var if yes how, if no why?

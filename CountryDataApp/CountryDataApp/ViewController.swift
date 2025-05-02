@@ -9,7 +9,7 @@ import UIKit
 
 
 // when confirmng to a protocol, it is better to do it in the extension when there's more than one or enum
-class ViewController: UIViewController, {
+class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -71,12 +71,12 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-
-extension ViewController: UITableViewDelegate{
-    func tabliew (_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
-        
-    }
-}
+//
+//extension ViewController: UITableViewDelegate{
+//    func tabliew (_ tableView: UITableView, numberOfRowsInSection section: Int ) -> Int {
+//        
+//    }
+//}
 
 
 

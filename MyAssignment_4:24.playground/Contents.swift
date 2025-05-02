@@ -1,8 +1,8 @@
 /*
  interview questions
   1. what is dependency injection
-  R. Dependency is a design pattern where one object provides the dependency of other object
-     to avoid the creating an object of one class in an other taht can create an infinite loop
+  R. Dependency is a design pattern that allow 2 classes to communicate. where one object provides the dependency of other object
+     to avoid the creating an object of one class in an other that can create an infinite loop
  
   2. difference types of dependency and advantage of it
   R. Dependency Initializer
