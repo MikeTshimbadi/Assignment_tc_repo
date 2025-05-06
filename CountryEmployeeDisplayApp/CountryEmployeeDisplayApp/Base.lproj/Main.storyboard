@@ -221,6 +221,47 @@
             </objects>
             <point key="canvasLocation" x="2871" y="-280"/>
         </scene>
+        <!--Employee Detail View Controller-->
+        <scene sceneID="UrR-aJ-ncd">
+            <objects>
+                <viewController id="oc1-VG-96I" customClass="EmployeeDetailViewController" customModule="CountryEmployeeDisplayApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cmo-N5-GQL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNX-dV-qQE">
+                                <rect key="frame" x="10" y="505" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-1j-YJ3">
+                                <rect key="frame" x="76.666666666666686" y="362" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FW7-oL-S87"/>
+                                    <constraint firstAttribute="width" constant="240" id="IOs-qK-2xL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="grv-1S-Nhe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="grv-1S-Nhe" firstAttribute="trailing" secondItem="MNX-dV-qQE" secondAttribute="trailing" constant="10" id="BYm-Mb-u2Y"/>
+                            <constraint firstItem="MNX-dV-qQE" firstAttribute="top" secondItem="xqg-1j-YJ3" secondAttribute="bottom" constant="15" id="GZ8-kF-atz"/>
+                            <constraint firstItem="MNX-dV-qQE" firstAttribute="leading" secondItem="grv-1S-Nhe" secondAttribute="leading" constant="10" id="tch-VO-r3C"/>
+                            <constraint firstItem="xqg-1j-YJ3" firstAttribute="centerY" secondItem="Cmo-N5-GQL" secondAttribute="centerY" id="wqi-Qt-Yzz"/>
+                            <constraint firstItem="xqg-1j-YJ3" firstAttribute="centerX" secondItem="Cmo-N5-GQL" secondAttribute="centerX" id="zcD-ut-bth"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewLbl" destination="xqg-1j-YJ3" id="zR8-6e-nB3"/>
+                        <outlet property="nameLabel" destination="MNX-dV-qQE" id="mLJ-u6-6qF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOq-kG-HwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3691" y="-273"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="o8e-57-hMT">
             <objects>

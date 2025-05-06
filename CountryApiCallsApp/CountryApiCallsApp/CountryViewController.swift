@@ -16,6 +16,7 @@ class CountryViewController: UIViewController {
         tableView.dataSource = self
 //        tableView.delegate = self
         getUsers()
+        
     }
     
     var countries: [Country] = []
