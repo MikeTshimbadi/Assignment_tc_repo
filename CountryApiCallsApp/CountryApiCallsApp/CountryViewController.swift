@@ -10,10 +10,13 @@ import UIKit
 class CountryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var coodinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
+        tableView.delegate = self
 //        tableView.delegate = self
         getUsers()
         
@@ -49,15 +52,14 @@ func getUsers() {
 }
 }
 
-extension CountryViewController: UITableViewDataSource {
+extension CountryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell",
-                                                 for: indexPath) as? CountryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as? CountryTableViewCell
         
         cell?.nameLabel.text = countries[indexPath.row].name
         cell?.capitalLabel.text = countries[indexPath.row].capital
@@ -65,7 +67,11 @@ extension CountryViewController: UITableViewDataSource {
         
         return cell ?? UITableViewCell()
     }
-
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCountry = countries[indexPath.row]
+        coodinator?.navigateToSearchDetails()
+        print("Selected country: \(String(describing: selectedCountry.name))")
+        }
 }
 

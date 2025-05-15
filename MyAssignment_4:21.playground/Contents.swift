@@ -1,7 +1,7 @@
 
 // ------------------------------ interview questions ----------------------
 //1. diff type of initializers
-// R. - Disagnated initializer
+// R. - Disignated initializer
 //    - Convenience initializer
 
 //2. diff b/w designated initializer and convenience intializer. Explain with an example

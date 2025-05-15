@@ -6,7 +6,7 @@
 // 3. diff b/w explict and implicit variables
 // R. an implicit variable is when a value is assigned at
 // declaration w/o a data type -> var city = "LA"
-// whereas explicit is when you declara the variable and type prior to assigning value
+// whereas explicit is when you declare the variable and type prior to assigning value
 // 4. how to create optional variables
 // R. By adding a ("?") to the end of the data type declaration -> String?
 // 5. what is optional binding

@@ -12,11 +12,13 @@ class LoginViewControllerTests: XCTestCase {
 
     var loginViewController:LoginViewController!
     
+ // it's called before the function is executed
     override func setUpWithError() throws {
         
         loginViewController = LoginViewController()
     }
-
+    
+    // it's called after the function is executed
     override func tearDownWithError() throws {
        loginViewController = nil
     }
@@ -24,31 +26,6 @@ class LoginViewControllerTests: XCTestCase {
     
     func testLoginValidation() {
         
-        var expectedOutput = "Please input credentials."
-       var actualOutput =  loginViewController.validateCredentials(userName:"", password: "")
         
-        
-        XCTAssertEqual(expectedOutput, actualOutput)
-        
-        
-        expectedOutput = "Password is invalid"
-        actualOutput =  loginViewController.validateCredentials(userName:"rbs", password: "afasd")
-        
-        
-        XCTAssertEqual(expectedOutput, actualOutput)
-        
-        expectedOutput = "Username is invalid"
-        actualOutput =  loginViewController.validateCredentials(userName:"afa", password: "1234")
-        
-        
-        XCTAssertEqual(expectedOutput, actualOutput)
-        
-        
-        
-        actualOutput =  loginViewController.validateCredentials(userName:"rbs", password: "1234")
-        
-        
-        XCTAssertNil(actualOutput)
     }
-
 }

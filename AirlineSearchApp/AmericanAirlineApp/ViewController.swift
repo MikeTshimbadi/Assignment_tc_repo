@@ -31,35 +31,17 @@ class ViewController: UIViewController, UISearchBarDelegate {
     var relatedTopics: [SearchResult] = []
     var searchBar = UISearchBar()
     let networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         searchBar.delegate = self
         searchBar.placeholder = "Search..."
         tableView.tableHeaderView = searchBar
-        
-        let searchText = ""
-        let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let endpoint = "https://api.duckduckgo.com/?q=\(query)&format=json&pretty=1"
-        
-        networkManager.doApi(endPoint: endpoint, modelName: SearchReponse.self) { response, error in
-            
-            if let response = response {
-                self.results = response.results
-                self.relatedTopics = response.relatedTopics
-                DispatchQueue.main.async {
-//                    self.results = response.results // Assign the results to array
-//                    self.relatedTopics = response.relatedTopics
-                    self.tableView.reloadData()
-                }
-            } else if let error = error {
-                print("API Error: \(error)")
-            }
-        }
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -75,11 +57,6 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //        if indexPath.section == 0 {
-        //            let cell = UITableViewCell()
-        //            searchBar.placeholder = "Search"
-        //            return cell
-        //        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? NameLabelTableViewCell
         
         if indexPath.section == 0 {
@@ -104,32 +81,40 @@ extension ViewController: UITableViewDataSource {
             return " "
         }
     }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("User typed: \(searchText)")
-        // You can filter your section 1 and section 2 data here and reload the table
+    
+    func performSearch(for query: String?) {
+        guard let query = query, !query.isEmpty else { return }
         
-        let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let endpoint = "https://api.duckduckgo.com/?q=\(query)&format=json&pretty=1"
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let url = "https://api.duckduckgo.com/?q=\(encodedQuery)&format=json&pretty=1"
         
-        networkManager.doApi(endPoint: endpoint, modelName: SearchReponse.self) { response, error in
-            if let response = response {
-                DispatchQueue.main.async {
-                    self.results = response.results
-                    self.relatedTopics = response.relatedTopics
-                    self.tableView.reloadData()
-                }
-            } else if let error = error {
-                print("API Error: \(error)")
+        Task {
+            do {
+                let response = try await networkManager.execute(
+                    request: SearchRequest.createRequest(text: "American airline"),
+                    modelName: SearchReponse.self)
+                self.results = response.results
+                self.relatedTopics = response.relatedTopics
+                networkManager.didUpdateSearchResults(results: self.results, relatedTopics: self.relatedTopics)
+            } catch {
+                networkManager.didFailWithError("Failed to fetch or parse data.")
             }
         }
     }
     
+    func didUpdateSearchResults(results: [SearchResult], relatedTopics: [SearchResult]) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("User typed: \(searchText)")
+    }
 }
-
-//
-//else {
-//    
-//    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//    cell.textLabel?.text = "\(indexPath.section)-\(indexPath.row)"
-//    return cell
-//}
+     
+    

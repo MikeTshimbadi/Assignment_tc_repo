@@ -10,8 +10,10 @@
         - the object is always in a valid state
     Instance dependency
         - It is flexible
-        - support different framworks and library
+        - support different frameworks and library
         - it is good for testing and mocking
+    function parameter dependency
+ 
   3. when to use each type of injetcion
         a. Initializer dependency
         R. - Use when the dependency is essential and the object can't function without it.

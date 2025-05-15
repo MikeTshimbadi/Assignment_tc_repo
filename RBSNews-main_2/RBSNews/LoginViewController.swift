@@ -6,6 +6,9 @@
 //
 
 import UIKit
+enum CustomError: Error {
+     case divideByZero
+}
 
 class LoginViewController: UIViewController {
     
@@ -23,27 +26,41 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-    
+//        guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+//            Utility.shared.showAlert(self, "Alert!", "Please input credentials.")
+//            return
+//        }
+//        
+//        guard expectedUsername == username else {
+//            Utility.shared.showAlert(self, "Alert!", "Username is invalid")
+//            return
+//        }
+//        
+//        guard expectedPassword == password else {
+//            Utility.shared.showAlert(self, "Alert!", "Password is invalid")
+//            return
+//        }
+//        navigateToHomeScreen()
+//        return
         
-        guard let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-            
+        let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             Utility.shared.showAlert(self, "Alert!", "Please input credentials.")
+        
+    }
 
-           return
-       }
-       
-       guard expectedUsername == username else {
-           Utility.shared.showAlert(self, "Alert!", "Username is invalid")
+    func validate(name: String?, pass: String?) -> String {
+        guard let username = name, !username.isEmpty,
+                  let password = pass, !password.isEmpty else {
+                return "Please input credentials."
+            }
+            guard expectedUsername == username else {
+                return "Username is invalid"
+            }
+            guard expectedPassword == password else {
+                return  "Password is invalid"
+            }
 
-          return
-       }
-       
-       guard expectedPassword == password else {
-           Utility.shared.showAlert(self, "Alert!", "Password is invalid")
-         return
-       }
-       navigateToHomeScreen()
-        return
+            return ""
     }
     
    
@@ -55,6 +72,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    func divide(dividend: Int, divisor: Int) throws -> Int {
+        if divisor == 0 {
+          throw CustomError.divideByZero
+        } else {
+            return dividend / divisor
+        }
+   }
     
 }
 
