@@ -17,6 +17,12 @@ class CountryTableViewCell: UITableViewCell {
         // Initialization code
         setViews()
     }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setViews()
+    }
+
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
@@ -39,7 +45,8 @@ class CountryTableViewCell: UITableViewCell {
         capitalLabel.font = UIFont.systemFont(ofSize: 14)
         codeLabel.font = UIFont.systemFont(ofSize: 12)
         codeLabel.textColor = .gray
-
+        
+        setConstarints()
     }
     
     private func setConstarints() {

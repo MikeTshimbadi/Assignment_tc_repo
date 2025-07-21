@@ -25,8 +25,10 @@ class NetworkManager {
             do {
                 let countries = try JSONDecoder().decode(
                     [Country].self, from: data)
-                
-                self.delegate?.refreshUI()
+                DispatchQueue.main.async {
+                    self.delegate?.didFetchCountries(countries: countries)
+                }
+//                self.delegate?.refreshUI()
                 
             } catch {
                 

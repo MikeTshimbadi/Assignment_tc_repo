@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol CountryViewControllerProtocol {
+protocol CountryViewControllerProtocol: AnyObject {
     func refreshUI()
+    func didFetchCountries(countries: [Country])
 }
 
 class CountryViewController: UIViewController {
@@ -23,8 +24,7 @@ class CountryViewController: UIViewController {
         networkManager.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CountryTableViewCell")
-        refreshUI()
+        tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: "CountryTableViewCell")
         return tableView
     }()
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class CountryViewController: UIViewController {
         self.view.addSubview(tableView)
         setupTableView()
         networkManager.doApi()
-//        refreshUI()
+        refreshUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +52,11 @@ class CountryViewController: UIViewController {
 }
 
 extension CountryViewController: CountryViewControllerProtocol {
+    func didFetchCountries(countries: [Country]) {
+        self.countries = countries
+        refreshUI()
+    }
+    
     func refreshUI() {
         DispatchQueue.main.async {
             self.tableView.reloadData()

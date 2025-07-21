@@ -5,7 +5,7 @@
 // R. using var for mutable and let for immutable
 // 3. diff b/w explict and implicit variables
 // R. an implicit variable is when a value is assigned at
-// declaration w/o a data type -> var city = "LA"
+// declaration with a data type -> var city = "LA"
 // whereas explicit is when you declare the variable and type prior to assigning value
 // 4. how to create optional variables
 // R. By adding a ("?") to the end of the data type declaration -> String?

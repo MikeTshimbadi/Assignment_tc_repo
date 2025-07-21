@@ -19,10 +19,11 @@ final class MainCoordinator: Coordinator {
     
     
     func start()-> UINavigationController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController (withIdentifier: "CountryViewController") as? CountryViewController else {
-            fatalError("CountryViewController not found in Main.storyboard")
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let controller = storyboard.instantiateViewController (withIdentifier: "CountryViewController") as? CountryViewController else {
+//            fatalError("CountryViewController not found in Main.storyboard")
+//        }
+        let controller = CountryViewController()
         controller.coordinator = self
         navigationController.viewControllers = [controller]
         return navigationController
